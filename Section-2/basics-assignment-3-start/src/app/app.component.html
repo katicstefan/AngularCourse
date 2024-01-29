@@ -10,4 +10,22 @@
       </ol>
     </div>
   </div>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+      <button class="btn"
+        (click)="onClickButtonDisplayDetails($event)"
+        [ngClass]="enableDisplayDetailsButton ? 'btn-success' : 'btn-danger'">
+        Display Details
+      </button>
+      <p [hidden]="!enableDisplayDetailsButton">Secret Password = tuna</p>
+      <ol *ngIf="buttonClicks.length > 0">
+        <li *ngFor="let item of buttonClicks; index as i"
+          [ngStyle]="{'background-color': i >= 4 ? 'blue' : ''}"
+          [ngClass]="i >= 4 ? 'text-white' : ''">
+          Clicked at {{ item.time }}, new status: {{ item.status }}
+        </li>
+      </ol>
+    </div>
+  </div>
 </div>
