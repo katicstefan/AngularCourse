@@ -18,11 +18,11 @@
         [ngClass]="enableDisplayDetailsButton ? 'btn-success' : 'btn-danger'">
         Display Details
       </button>
-      <p [hidden]="!enableDisplayDetailsButton">Secret Password = tuna</p>
+      <p *ngIf="!enableDisplayDetailsButton">Secret Password = tuna</p>
       <ol *ngIf="buttonClicks.length > 0">
         <li *ngFor="let item of buttonClicks; index as i"
           [ngStyle]="{'background-color': i >= 4 ? 'blue' : ''}"
-          [ngClass]="i >= 4 ? 'text-white' : ''">
+          [ngClass]="{'text-white': i >= 4}">
           Clicked at {{ item.time }}, new status: {{ item.status }}
         </li>
       </ol>
