@@ -18,7 +18,7 @@
         <div class="form-group">
           <label for="name">Project Name</label>
           <input
-            name="name"
+            id="name"
             type="text"
             class="form-control"
             formControlName="name">
@@ -38,8 +38,8 @@
         <div class="form-group">
           <label for="mail">Mail</label>
           <input
-           name="mail"
-           type="text"
+           id="mail"
+           type="email"
            class="form-control"
            formControlName="mail">
            <span
@@ -58,8 +58,7 @@
         <div class="form-group">
           <label for="status">Project Status</label>
           <select
-           name="status"
-           type="text"
+           id="status"
            class="form-control"
            formControlName="status">
            <option *ngFor="let status of statusOptions" [value]="status">{{ status }}</option>
